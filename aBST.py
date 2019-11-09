@@ -20,10 +20,12 @@ class aBST:
                         i = 2*i + 2
 
     def AddKey(self, key):
-        if self.FindKeyIndex(key) is not None:
-            if self.FindKeyIndex(key) < 0:
-            	return self.FindKeyIndex(key)
-            else:
-            	self.Tree[self.FindKeyIndex(key)] = key
-        else:
-            return None
+    	place = self.FindKeyIndex(key)
+    	if place is not None:
+    		if place <= 0:
+    			self.Tree[-place] = key
+    			return -place
+    		elif place < 0:
+    			return place
+    	else:
+    		return None
