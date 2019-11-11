@@ -25,7 +25,7 @@ class aBST:
     		if place <= 0:
     			self.Tree[-place] = key
     			return -place
-    		elif place < 0:
+    		elif place > 0:
     			return place
     	else:
-    		return None
+    		return -1
